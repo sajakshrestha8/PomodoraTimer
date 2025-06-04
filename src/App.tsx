@@ -7,6 +7,9 @@ const App = () => {
   const [second, setSecond] = useState(0);
   const [isStart, setIsStart] = useState<boolean>(false);
   const [play, setPlay] = useState(false);
+  const [isPomodoro, setIsPomodoro] = useState(true);
+  const [isShortBreak, setIsShortBreak] = useState(false);
+  const [isLongBreak, setIsLonogBreak] = useState(false);
   const test = new Audio(audio);
 
   useEffect(() => {
@@ -45,26 +48,42 @@ const App = () => {
   };
 
   const handleReset = () => {
-    setMinute(25);
-    setSecond(0);
+    if (isPomodoro === true) {
+      setMinute(25);
+      setSecond(0);
+    } else if (isShortBreak === true) {
+      setMinute(5);
+      setSecond(0);
+    } else if (isLongBreak === true) {
+      setMinute(15);
+      setSecond(0);
+    }
     setIsStart(false);
   };
 
   const handleSwitchPomodoro = () => {
-    setMinute(1);
+    setMinute(25);
     setSecond(0);
+    setIsLonogBreak(false);
+    setIsShortBreak(false);
   };
 
   const handleSwitchShortBreak = () => {
     setMinute(5);
     setSecond(0);
     setIsStart(false);
+    setIsPomodoro(false);
+    setIsLonogBreak(false);
+    setIsShortBreak(true);
   };
 
   const handleSwitchLongBreak = () => {
     setMinute(15);
     setSecond(0);
     setIsStart(false);
+    setIsPomodoro(false);
+    setIsShortBreak(false);
+    setIsLonogBreak(true);
   };
 
   return (
