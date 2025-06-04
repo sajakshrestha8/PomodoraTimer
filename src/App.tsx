@@ -3,7 +3,7 @@ import "./App.css";
 import audio from "./assets/10sec-countdown-bell-sound-79584.mp3";
 
 const App = () => {
-  const [minute, setMinute] = useState(1);
+  const [minute, setMinute] = useState(25);
   const [second, setSecond] = useState(0);
   const [isStart, setIsStart] = useState<boolean>(false);
   const [play, setPlay] = useState(false);
@@ -41,10 +41,11 @@ const App = () => {
 
   const handleStop = () => {
     setIsStart(false);
+    test.pause();
   };
 
   const handleReset = () => {
-    setMinute(10);
+    setMinute(25);
     setSecond(0);
     setIsStart(false);
   };
@@ -68,8 +69,9 @@ const App = () => {
 
   return (
     <>
-      <div className={isStart ? "focusWrapper" : "wrapper"}>
-        <div>
+      <div className="wrapper">
+        <div>{isStart && "Focus mode on"}</div>
+        <div className="typeBtnWrapper">
           <button className="typeBtn" onClick={handleSwitchPomodoro}>
             Pomodoro
           </button>
@@ -80,20 +82,25 @@ const App = () => {
             Long Break
           </button>
         </div>
-        <div>
+        <div className="time">
           {paddedMinute} : {paddedSecond}
         </div>
         <div className="btnWrapper">
           <div>
             {isStart ? (
-              <button onClick={handleStop}>Stop</button>
+              <button className="btnStop" onClick={handleStop}>
+                Stop
+              </button>
             ) : (
-              <button onClick={handleStart}>Start</button>
+              <button className="btn" onClick={handleStart}>
+                Start
+              </button>
             )}
           </div>
-          <button onClick={handleReset}>Reset</button>
+          <button className="btn" onClick={handleReset}>
+            Reset
+          </button>
         </div>
-        <div>{isStart && "Focus mode on"}</div>
       </div>
     </>
   );

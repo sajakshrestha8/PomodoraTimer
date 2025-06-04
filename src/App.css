@@ -1,9 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Delius&family=Fira+Code:wght@300..700&family=Homemade+Apple&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+25&family=Jura:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Vinyl&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-image: url("https://img.freepik.com/premium-photo/lofi-illustration-girl-wearing-headphones-sitting-outdoor-watching-sunset-sky_1110958-22947.jpg?semt=ais_hybrid&w=740");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .focusWrapper {
@@ -19,14 +30,66 @@
 .btnWrapper {
   display: flex;
   flex-direction: row;
+  gap: 16px;
 }
 
 .typeBtn {
-  background-color: rgb(254, 254, 254);
+  background-color: transparent;
   border: none;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-radius: 50px;
+  border: 1px solid white;
+  color: white;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .typeBtn:hover {
-  background-color: gray;
+  background-color: white;
+  color: black;
+}
+
+.time {
+  font-size: 82px;
+  font-weight: 600;
   color: white;
+}
+
+.typeBtnWrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: none;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: rgb(253, 219, 219);
+}
+
+.btnStop {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(251, 77, 77);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.btnStop:hover {
+  background-color: rgb(251, 82, 82);
 }
